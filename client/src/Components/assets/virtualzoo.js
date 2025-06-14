@@ -91,8 +91,7 @@ const slideshowBack = () => {
         <div>
           <h1 id="title">VIRTUAL ZOO</h1>
           <div id="animalImgDiv">
-           {/* <img src={`/${animalId}.jpg`} alt={animal.name} id="animalImg" /> */}
-           <img src={`${process.env.PUBLIC_URL}/${animalId}.jpg`} alt={animal.name} id="animalImg" />
+           <img src={`/${animalId}.jpg`} alt={animal.name} id="animalImg" />
 
          </div>
          <div id="animalInfoDiv">

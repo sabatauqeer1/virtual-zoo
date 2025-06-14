@@ -10,23 +10,12 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 app.use(
   cors({
-    origin:[ "http://localhost:3000","https://thevirtualzoo.netlify.app"],
+    origin:"https://thevirtualzoo.netlify.app",
     credentials: true,
   })
 );
 //headers
-app.use((req, res, next) => {
-res.setHeader("Access-Control-Allow-Origin", "https://thevirtualzoo.netlify.app");
-  res.setHeader(
-    "Access-Control-Headers",
-    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELTE, PATCH, OPTIONS"
-  );
-  next();
-});
+
 app.use(express.json())
 app.get("/", (req, res) => {
   res.send("Backend is live! ✅");
