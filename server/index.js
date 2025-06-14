@@ -7,16 +7,16 @@ configDotenv({ path: "./.env" })
 
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin:[ "http://localhost:3000","https://thevirtualzoo.netlify.app"],
     credentials: true,
   })
 );
 //headers
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+res.setHeader("Access-Control-Allow-Origin", "https://thevirtualzoo.netlify.app");
   res.setHeader(
     "Access-Control-Headers",
     "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"

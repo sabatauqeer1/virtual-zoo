@@ -29,7 +29,9 @@ const [animal, setanimal] = useState(null)
  useEffect(() => {
 
     const animalInfo= async ()=>{
-    const  response = await axios.post( `http://localhost:3001/api/virtualzoo/${animalId}`)
+  const response = await axios.post(`https://virtualzoo-backend.up.railway.app/api/virtualzoo/${animalId}`);
+
+
  setanimal( response.data)
 
  
@@ -89,7 +91,9 @@ const slideshowBack = () => {
         <div>
           <h1 id="title">VIRTUAL ZOO</h1>
           <div id="animalImgDiv">
-           <img src={`/${animalId}.jpg`} alt={animal.name} id="animalImg" />
+           {/* <img src={`/${animalId}.jpg`} alt={animal.name} id="animalImg" /> */}
+           <img src={`${process.env.PUBLIC_URL}/${animalId}.jpg`} alt={animal.name} id="animalImg" />
+
          </div>
          <div id="animalInfoDiv">
          <div id="animalInfo">
