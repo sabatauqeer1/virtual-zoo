@@ -28,6 +28,9 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json())
+app.get("/", (req, res) => {
+  res.send("Backend is live! ✅");
+});
 app.use("/api/virtualzoo/", router);
 app.listen(PORT, () => {
   db();
