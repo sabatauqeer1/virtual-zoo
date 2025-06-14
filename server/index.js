@@ -9,9 +9,11 @@ configDotenv({ path: "./.env" })
 const app = express();
 const PORT = process.env.PORT || 3001;
 app.use(
-  cors(
-    
-))
+  cors({
+    origin:"https://thevirtualzoo.netlify.app",
+    credentials: true,
+  })
+);
 //headers
 
 app.use(express.json())

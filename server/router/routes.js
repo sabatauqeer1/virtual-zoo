@@ -8,6 +8,6 @@ import { dataRetriver } from "../controller/retriever.js";
 //routes
 
 router.post("/data",dataMaker );
-router.post("/:id",dataRetriver );
+router.get("/:id",dataRetriver );
 
 export default router;
