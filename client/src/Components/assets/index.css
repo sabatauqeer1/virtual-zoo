@@ -1,0 +1,57 @@
+#title{
+    text-align: center;
+    color: RED;
+}
+#animalImgDiv{
+    display: flex;
+  justify-content: center;
+}
+#animalImg{
+ 
+    border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  width: 500px;
+  height: 500px;
+
+}
+#animalInfoDiv{
+    display: flex;
+  justify-content: center;
+    
+    
+
+
+}
+#animalInfo{
+
+        border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  width: 500px;
+  height: 250px;
+
+
+}
+#forwardSlideShowButton {
+  
+  position: fixed;
+  top: 50%;
+  right: 600px; 
+  transform: translateY(-50%);
+  z-index: 999;
+}
+#backSlideShowButton {
+ 
+  position: fixed;
+  top: 50%;
+  left: 600px; 
+  transform: translateY(-50%);
+  z-index: 999;
+  background-color: #73AD21;
+}
+button{
+  color:white;
+  background-color: #73AD21;
+  border-color: #73AD21;
+}
