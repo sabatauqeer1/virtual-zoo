@@ -29,7 +29,9 @@ const [animal, setanimal] = useState(null)
  useEffect(() => {
 
     const animalInfo= async ()=>{
-  const response = await axios.post(`http://localhost:3001/api/virtualzoo/${animalId}`);
+  const response = await axios.post(`https://virtualzoo-backend.vercel.app/api/virtualzoo/${animalId}`);
+
+
 
 
  setanimal( response.data)
@@ -56,7 +58,7 @@ const slideshowForward = () => {
   const index = ids.findIndex(id => id === currentId);
   if (index !== -1) {
     const nextIndex = (index + 1) % ids.length;
-    navigate(`/api/virtualzoo/${ids[nextIndex]}`);
+  navigate(`/virtualzoo/${ids[nextIndex]}`);
     hasSlideshowStarted.current = true;
   }
 };
@@ -73,7 +75,7 @@ const slideshowBack = () => {
 
   if (index !== -1) {
     const prevIndex = (index - 1 + ids.length) % ids.length;
-    navigate(`/api/virtualzoo/${ids[prevIndex]}`);
+    navigate(`/virtualzoo/${ids[prevIndex]}`);
     hasSlideshowStarted.current = true;
   }
 };
@@ -96,9 +98,9 @@ const slideshowBack = () => {
          </div>
          <div id="animalInfoDiv">
          <div id="animalInfo">
-        <h2>Name:{animal[0].name }</h2>
-          <h2>Types:{animal[0].types }</h2>
-          <h2>Description:{animal[0].description  }</h2>
+        <h2>Name:{animal.name }</h2>
+          <h2>Types:{animal.types }</h2>
+          <h2>Description:{animal.description  }</h2>
           </div>
           </div>
           <div id="forwardSlideShowButton">
