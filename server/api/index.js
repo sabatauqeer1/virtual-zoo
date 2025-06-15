@@ -24,7 +24,7 @@ const __dirname = path.resolve()
 
 app.use(express.json())
 
-app.use("https://virtualzoo-backend.vercel.app/api/virtualzoo/", router);
+app.use("/api/virtualzoo/", router);
 
  
 
