@@ -3,7 +3,7 @@ import { Animal } from "../model/animal.js"
     const {id}=req.params 
 
 
-     const animal= await Animal.find({id:id})
+     const animal= await Animal.findOne({id:id})
 
   console.log("resposne sent");
   
