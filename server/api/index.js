@@ -17,18 +17,7 @@ const PORT = process.env.PORT || 3001;
     credentials: true,
   })
 );
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://virtual-zoo-5dxm.vercel.app");
-  res.setHeader(
-    "Access-Control-Headers",
-    "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELTE, PATCH, OPTIONS"
-  );
-  next();
-})
+app.use(cors());
   
 
 //headers
