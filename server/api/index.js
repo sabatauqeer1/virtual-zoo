@@ -1,6 +1,6 @@
 import express from "express";
-import { db } from "./config/db.js";
-import router from "./router/routes.js";
+import { db } from "../config/db.js";
+import router from "../router/routes.js";
 import { configDotenv } from "dotenv";
 import cors from "cors"
 import path from "path"
@@ -26,11 +26,7 @@ app.use(express.json())
 
 app.use("/api/virtualzoo/", router);
 
-  app.use(express.static(path.join(__dirname,"../client/build")))
- app.get(/(.*)/,(req,res)=>{
-  res.sendFile(path.join(__dirname,"../client","build","index.html"))
-})
-
+ 
 
 app.listen(PORT, () => {
   db();
