@@ -14,7 +14,7 @@ const __dirname = path.resolve()
 
   app.use(
   cors({
-    origin:"http://localhost:3000",
+    origin: "https://virtual-zoo-7iq9.vercel.app",
     credentials: true,
   })
 );
