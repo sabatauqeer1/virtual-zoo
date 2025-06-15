@@ -4,8 +4,8 @@ const App = () => {
   return (
     <>
       <Routes>
-           <Route path="/" element={<Navigate to="/api/virtualzoo/1749815004689" />} />
-        <Route path="api/virtualzoo/:animalId" element={<VirtualZoo />} />
+           <Route path="/" element={<Navigate to="/api/1749815004689" />} />
+        <Route path="/api/:animalId" element={<VirtualZoo />} />
       
       </Routes>
     </>

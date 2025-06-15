@@ -29,7 +29,7 @@ const [animal, setanimal] = useState(null)
  useEffect(() => {
 
     const animalInfo= async ()=>{
-  const response = await axios.get(`https://virtualzoo-backend.up.railway.app/api/virtualzoo/${animalId}`);
+  const response = await axios.post(`http://localhost:3001/api/virtualzoo/${animalId}`);
 
 
  setanimal( response.data)
