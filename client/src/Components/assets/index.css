@@ -1,4 +1,4 @@
-#title{
+/* #title{
     text-align: center;
     color: RED;
 }
@@ -54,4 +54,111 @@ button{
   color:white;
   background-color: #73AD21;
   border-color: #73AD21;
+} */
+ #title {
+  text-align: center;
+  color: red;
+}
+
+#animalImgDiv {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+#animalImg {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 10px;
+  max-width: 90%;
+  height: auto;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+#animalInfoDiv {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+#animalInfo {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  max-width: 90%;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Slide Show Buttons */
+#forwardSlideShowButton,
+#backSlideShowButton {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  background-color: #73AD21;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+#forwardSlideShowButton {
+  right: 2%;
+}
+
+#backSlideShowButton {
+  left: 2%;
+}
+
+button {
+  color: white;
+  background-color: #73AD21;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  #animalImg,
+  #animalInfo {
+    max-height: none;
+    height: auto;
+    padding: 10px;
+  }
+
+  #forwardSlideShowButton,
+  #backSlideShowButton {
+    top: auto;
+    bottom: 10%;
+    transform: none;
+    left: 20%;
+    right: 20%;
+  }
+
+  #forwardSlideShowButton {
+    left: auto;
+    right: 10%;
+  }
+
+  #backSlideShowButton {
+    right: auto;
+    left: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
 }
