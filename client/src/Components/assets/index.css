@@ -5,12 +5,11 @@
 }
 
 body {
-  overflow: hidden; /* ✅ Prevent scroll */
+  overflow: hidden;
   background-color: white;
   font-family: sans-serif;
 }
 
-/* Title */
 #title {
   text-align: center;
   color: red;
@@ -18,15 +17,15 @@ body {
   margin: 1vh 0;
 }
 
-/* Image Container */
+/* Image container */
 #animalImgDiv {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 45vh; /* Top half of screen */
+  height: 45vh;
 }
 
-/* Animal Image */
+/* Animal image */
 #animalImg {
   border-radius: 25px;
   border: 2px solid #73AD21;
@@ -38,7 +37,7 @@ body {
   object-fit: contain;
 }
 
-/* Info Container */
+/* Info container */
 #animalInfoDiv {
   display: flex;
   justify-content: center;
@@ -46,7 +45,7 @@ body {
   height: 30vh;
 }
 
-/* Info Box */
+/* Info box */
 #animalInfo {
   border-radius: 25px;
   border: 2px solid #73AD21;
@@ -58,7 +57,7 @@ body {
   text-align: center;
 }
 
-/* Slide Show Buttons */
+/* Buttons */
 #forwardSlideShowButton,
 #backSlideShowButton {
   position: fixed;
@@ -66,16 +65,22 @@ body {
   transform: translateY(-50%);
   z-index: 999;
 
-  background-color: #73AD21; /* solid green */
-  color: white;              /* white text */
-  font-size: 2vh;
-  padding: 12px 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Make it a circle button */
+  background-color: #73AD21;
+  color: white;
   border: none;
-  border-radius: 15px;
   cursor: pointer;
+  font-size: 2vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; /* Remove mobile tap highlight */
 }
 
-/* Button positioning */
 #forwardSlideShowButton {
   right: 2vw;
 }
@@ -84,9 +89,18 @@ body {
   left: 2vw;
 }
 
-/* Reset all button styles */
+/* Remove default button style */
 button {
-  font-family: inherit;
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
   background-color: #73AD21;
   color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2vh;
+  user-select: none;
 }
