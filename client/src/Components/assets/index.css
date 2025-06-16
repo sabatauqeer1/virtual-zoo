@@ -55,48 +55,66 @@ button{
   background-color: #73AD21;
   border-color: #73AD21;
 } */
- #title {
-  text-align: center;
-  color: red;
-}
-
-#animalImgDiv {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 1rem;
-}
-
-#animalImg {
-  border-radius: 25px;
-  border: 2px solid #73AD21;
-  padding: 10px;
-  max-width: 90%;
-  height: auto;
-  width: 100%;
-  max-height: 500px;
-  object-fit: contain;
-}
-
-#animalInfoDiv {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  flex-wrap: wrap;
-}
-
-#animalInfo {
-  border-radius: 25px;
-  border: 2px solid #73AD21;
-  padding: 20px;
-  max-width: 90%;
-  width: 100%;
-  max-height: 250px;
-  overflow-y: auto;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* Slide Show Buttons */
+body {
+  overflow: hidden; /* ✅ Disable scroll */
+  background-color: white;
+  font-family: sans-serif;
+}
+
+#title {
+  text-align: center;
+  color: red;
+  font-size: 2.5vh; /* responsive font */
+  margin: 1vh 0;
+}
+
+/* IMAGE WRAPPER */
+#animalImgDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45vh; /* take upper half of screen */
+}
+
+/* IMAGE */
+#animalImg {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 1vh;
+  max-width: 90vw;
+  max-height: 100%;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* INFO WRAPPER */
+#animalInfoDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+/* INFO BOX */
+#animalInfo {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 2vh;
+  width: 80vw;
+  height: 100%;
+  overflow-y: auto;
+  font-size: 2vh;
+  text-align: center;
+}
+
+/* SLIDE BUTTONS */
 #forwardSlideShowButton,
 #backSlideShowButton {
   position: fixed;
@@ -106,59 +124,22 @@ button{
   background-color: #73AD21;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 1.5vh 2vh;
+  font-size: 2vh;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 #forwardSlideShowButton {
-  right: 2%;
+  right: 2vw;
 }
 
 #backSlideShowButton {
-  left: 2%;
+  left: 2vw;
 }
 
 button {
   color: white;
   background-color: #73AD21;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* Responsive Tweaks */
-@media (max-width: 768px) {
-  #animalImg,
-  #animalInfo {
-    max-height: none;
-    height: auto;
-    padding: 10px;
-  }
-
-  #forwardSlideShowButton,
-  #backSlideShowButton {
-    top: auto;
-    bottom: 10%;
-    transform: none;
-    left: 20%;
-    right: 20%;
-  }
-
-  #forwardSlideShowButton {
-    left: auto;
-    right: 10%;
-  }
-
-  #backSlideShowButton {
-    right: auto;
-    left: 10%;
-  }
-}
-
-@media (max-width: 480px) {
-  button {
-    padding: 8px 14px;
-    font-size: 14px;
-  }
+  border-color: #73AD21;
 }
