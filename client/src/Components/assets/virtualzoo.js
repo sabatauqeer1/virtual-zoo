@@ -63,7 +63,7 @@ export const VirtualZoo = () => {
           <div id="animalInfoDiv">
             <div id="animalInfo">
               <h2>Name:{animal.name}</h2>
-              <h2>Types:{animal.types}</h2>
+              <h2>Type:{animal.types}</h2>
               <h2>Description:{animal.description}</h2>
             </div>
           </div>
