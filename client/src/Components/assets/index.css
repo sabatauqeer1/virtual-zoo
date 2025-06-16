@@ -62,27 +62,28 @@ button{
 }
 
 body {
-  overflow: hidden; /* ✅ Disable scroll */
+  overflow: hidden; /* ✅ Prevent scroll */
   background-color: white;
   font-family: sans-serif;
 }
 
+/* Title */
 #title {
   text-align: center;
   color: red;
-  font-size: 2.5vh; /* responsive font */
+  font-size: 2.5vh;
   margin: 1vh 0;
 }
 
-/* IMAGE WRAPPER */
+/* Image Container */
 #animalImgDiv {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 45vh; /* take upper half of screen */
+  height: 45vh; /* Top half of screen */
 }
 
-/* IMAGE */
+/* Animal Image */
 #animalImg {
   border-radius: 25px;
   border: 2px solid #73AD21;
@@ -94,7 +95,7 @@ body {
   object-fit: contain;
 }
 
-/* INFO WRAPPER */
+/* Info Container */
 #animalInfoDiv {
   display: flex;
   justify-content: center;
@@ -102,7 +103,7 @@ body {
   height: 30vh;
 }
 
-/* INFO BOX */
+/* Info Box */
 #animalInfo {
   border-radius: 25px;
   border: 2px solid #73AD21;
@@ -114,20 +115,23 @@ body {
   text-align: center;
 }
 
-/* SLIDE BUTTONS */
+/* Slide Show Buttons */
 #forwardSlideShowButton,
 #backSlideShowButton {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
   z-index: 999;
+
   background-color: #73AD21;
   color: white;
-  border: none;
-  padding: 1.5vh 2vh;
   font-size: 2vh;
-  border-radius: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 #forwardSlideShowButton {
@@ -138,8 +142,14 @@ body {
   left: 2vw;
 }
 
-button {
-  color: white;
-  background-color: #73AD21;
-  border-color: #73AD21;
+#forwardSlideShowButton:hover,
+#backSlideShowButton:hover {
+  background-color: #5c9020;
+  transform: translateY(-50%) scale(1.05);
 }
+
+/* General Button Reset */
+button {
+  font-family: inherit;
+}
+
