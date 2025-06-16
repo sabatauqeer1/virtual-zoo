@@ -16,7 +16,7 @@ export const VirtualZoo = () => {
   useEffect(() => {
     const animalInfo = async () => {
       const response = await axios.post(
-        `http://localhost:3001/api/virtualzoo/${animalId}`
+        `https://virtual-zoo-78lt.onrender.com/api/virtualzoo/${animalId}`
       );
 
       setanimal(response.data);
