@@ -9,7 +9,6 @@ export const VirtualZoo = () => {
   const navigate = useNavigate();
   const hasSlideshowStarted = useRef(false);
   const [isSpeaking, setisSpeaking] = useState(!true);
-  const [IsReloading, setIsReloading] = useState(!true);
   const synth = window.speechSynthesis;
 
   const [animal, setanimal] = useState(null);
@@ -25,7 +24,6 @@ export const VirtualZoo = () => {
       setanimal(response.data);
       window.onbeforeunload = () => {
         synth.cancel();
-        setIsReloading(true);
       };
     };
 
