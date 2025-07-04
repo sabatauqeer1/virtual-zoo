@@ -87,25 +87,25 @@ export const VirtualZoo = () => {
 
   return (
     <div>
-      {animal ? (
-        <div>
-          <h1 id="title">VIRTUAL ZOO</h1>
-          <h2 id="animalName">{animal.name}</h2>
-          <div id="animalImgDiv">
-            {React.memo(() => {
-              <video
-                id="animalImg"
-                src={`/${animalId}.mp4`}
-                autoPlay
-                loop
-                muted
-                playsInline
-                controlsList="nodownload nofullscreen noremoteplayback"
-                controls
-              />;
-            })}
-          </div>
-
+    {animal ? (
+      <div>
+        <h1 id="title">VIRTUAL ZOO</h1>
+        <h2 id="animalName">{animal.name}</h2>
+        <div id="animalImgDiv">
+          <video
+            id="animalImg"
+            src={`/${animalId}.mp4`}
+            autoPlay
+            loop
+            muted
+            playsInline
+            controlsList="nodownload nofullscreen noremoteplayback"
+            controls
+          />
+        </div>
+      </div>
+    ) : null}
+  </div>
           <div id="animalInfoDiv">
             <div id="animalInfo">
               <h2>Type:{animal.types}</h2>
