@@ -1,9 +1,8 @@
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, React, useRef } from "react";
 import data from "./data.json";
 import "./index.css";
-import { useRef } from "react";
 
 export const VirtualZoo = () => {
   const navigate = useNavigate();
@@ -92,16 +91,18 @@ export const VirtualZoo = () => {
           <h1 id="title">VIRTUAL ZOO</h1>
           <h2 id="animalName">{animal.name}</h2>
           <div id="animalImgDiv">
-            <video
-              id="animalImg"
-              src={`/${animalId}.mp4`}
-              autoPlay
-              loop
-              muted
-              playsInline
-              controlsList="nodownload nofullscreen noremoteplayback"
-              controls
-            />
+            {React.memo(() => {
+              <video
+                id="animalImg"
+                src={`/${animalId}.mp4`}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controlsList="nodownload nofullscreen noremoteplayback"
+                controls
+              />;
+            })}
           </div>
 
           <div id="animalInfoDiv">

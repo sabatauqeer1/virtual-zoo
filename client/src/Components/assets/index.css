@@ -5,9 +5,9 @@
 }
 
 body {
-  overflow: hidden;
   background-color: white;
   font-family: sans-serif;
+  overflow-x: hidden; /* only hide horizontal overflow */
 }
 
 #title {
@@ -16,15 +16,14 @@ body {
   font-size: 2.5vh;
   margin: 1vh 1vw;
 }
-#animalName{
- 
+
+#animalName {
   font-size: 2.2vh;
   font-weight: bold;
   color: #333;
   margin-bottom: 1vh;
   text-align: center;
-    text-transform: uppercase;
-
+  text-transform: uppercase;
 }
 
 /* Image container */
@@ -67,28 +66,27 @@ body {
   text-align: center;
 }
 
-/* Buttons */
+/* Navigation Buttons */
 #forwardSlideShowButton,
 #backSlideShowButton {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
   z-index: 999;
-
   width: 60px;
   height: 60px;
-  border-radius: 50%; /* Make it a circle button */
+  border-radius: 50%;
   background-color: #73AD21;
   color: white;
   border: none;
   cursor: pointer;
   font-size: 2vh;
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
-  -webkit-tap-highlight-color: transparent; /* Remove mobile tap highlight */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 #forwardSlideShowButton {
@@ -99,22 +97,7 @@ body {
   left: 2vw;
 }
 
-/* Remove default button style */
-button {
-  all: unset;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background-color: #73AD21;
-  color: white;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 2vh;
-  user-select: none;
-}
-
+/* Speak Button */
 #speakButton {
   width: 50px;
   height: 50px;
@@ -130,4 +113,39 @@ button {
   bottom: 2vh;
   right: 2vw;
   z-index: 999;
+  touch-action: manipulation;
+}
+
+/* Reset default button styles */
+button {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #73AD21;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2vh;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 600px) {
+  #forwardSlideShowButton,
+  #backSlideShowButton,
+  button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8vh;
+  }
+
+  #speakButton {
+    width: 45px;
+    height: 45px;
+    font-size: 1.6vh;
+  }
 }
