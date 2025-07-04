@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import { useState, useEffect, React, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import data from "./data.json";
 import "./index.css";
 
