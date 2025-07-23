@@ -85,50 +85,48 @@ export const VirtualZoo = () => {
     }
   };
 
- return (
-  <div>
-    {animal ? (
-      <>
-        <h1 id="title">VIRTUAL ZOO</h1>
-        <h2 id="animalName">{animal.name}</h2>
-        <div id="animalImgDiv">
-          <video
-            id="animalImg"
-            src={`/${animalId}.mp4`}
-            autoPlay
-            loop
-            muted
-            playsInline
-            controlsList="nodownload nofullscreen noremoteplayback"
-            controls
-          />
-        </div>
+  return (
+    <div>
+      {animal ? (
+        <div>
+          <h1 id="title">VIRTUAL ZOO</h1>
+          <h2 id="animalName">{animal.name}</h2>
+          <div id="animalImgDiv">
+            {React.memo(() => {
+              <video
+                id="animalImg"
+                src={`/${animalId}.mp4`}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controlsList="nodownload nofullscreen noremoteplayback"
+                controls
+              />;
+            })}
+          </div>
 
-        <div id="animalInfoDiv">
-          <div id="animalInfo">
-            <h2>Type: {animal.types}</h2>
-            <h2>Description: {animal.description}</h2>
+          <div id="animalInfoDiv">
+            <div id="animalInfo">
+              <h2>Type:{animal.types}</h2>
+              <h2>Description:{animal.description}</h2>
+            </div>
+          </div>
+          <div id="forwardSlideShowButton">
+            <button onClick={slideshowForward}>forward</button>
+          </div>
+          <div id="backSlideShowButton">
+            <button onClick={slideshowBack}>back</button>
+          </div>
+          <div id="speakButton">
+            <button onClick={speakButtonHandler}> Speak</button>
           </div>
         </div>
-
-        <div id="forwardSlideShowButton">
-          <button onClick={slideshowForward}>forward</button>
-        </div>
-
-        <div id="backSlideShowButton">
-          <button onClick={slideshowBack}>back</button>
-        </div>
-
-        <div id="speakButton">
-          <button onClick={speakButtonHandler}>Speak</button>
-        </div>
-      </>
-    ) : (
-      <p>Loading...</p>
-    )}
-  </div>
-);
-
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
 };
 
 export default VirtualZoo;
